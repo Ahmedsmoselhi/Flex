@@ -1,0 +1,155 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:root {
+  --first-color: lightblue;
+  --second-color: #eee;
+  --third-color: white;
+  --fourth-color: rgba(1, 150, 157, 255);
+}
+body {
+  font-family: "Work Sans", "Sans-serif";
+  margin: 0;
+  background-color: var(--second-color);
+}
+.parent {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--second-color);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.container {
+  background-color: var(--second-color);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "one one one"
+    "two three four"
+    "five five five"
+    "six seven eight";
+  gap: 1rem;
+}
+.one,
+.five {
+  background-color: var(--first-color);
+  text-align: center;
+}
+.two,
+.three,
+.four,
+.six,
+.seven,
+.eight {
+  background-color: var(--third-color);
+}
+.one {
+  grid-area: one;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.six {
+  grid-area: six;
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.first {
+  width: 15rem;
+  height: 10rem;
+  transition: 0.5s 0.5s ease;
+}
+.bold {
+  color: var(--fourth-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.par {
+  justify-self: flex-start;
+  text-align: center;
+  margin-left: 6%;
+  margin-right: auto;
+}
+.bu1 {
+  background-color: var(--fourth-color);
+  color: var(--third-color);
+  border: none;
+  border-radius: 30px;
+  width: 15%;
+  height: 36%;
+}
+.two div,
+.three div,
+.four div,
+.six div,
+.seven div,
+.eight div {
+  color: var(--fourth-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+div {
+  padding: 10px;
+}
+.bu1:hover {
+  background-color: #eee;
+  color: black;
+}
+.first:hover {
+  transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 470px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "five"
+      "six"
+      "seven"
+      "eight";
+  }
+}
+@media only screen and (max-width: 450px) {
+  .one,
+  .five {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .bu1 {
+    height: 35%;
+    padding: 10px 10px;
+    width: fit-content;
+  }
+}
